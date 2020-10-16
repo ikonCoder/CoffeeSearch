@@ -1,0 +1,72 @@
+body{margin: 0px; font-family: monospace; background-image: url(../images/coffeeBackground.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;}
+
+
+#searchContainer{
+    position: relative;
+    top: 50px;    
+    /* transform: translateY(-50%); */
+}
+#brandTitle{
+    color: white;
+    text-align: center;
+    font-size: 55px;
+    margin: 0px;
+    letter-spacing: 1.5px;
+    padding-bottom: 20px;
+}
+#search{
+    display: block;
+    margin: 0 auto;
+    height: 42px;
+    width: 355px;
+    box-shadow: 0px 7px 3px 2px #0000008f;
+    border: none;
+    margin-top: 25px;
+}
+
+
+#starterBlocksContainer{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  bottom: -200px;
+  text-align: center;
+}
+#recomendTxt{
+    color: #ffffff;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 35px;
+    font-family: monospace;
+}
+.card{
+    display: inline-block;
+    margin: 0px 20px;
+}
+.card-img-top{
+    max-height: 190px;
+}
+.btn-dark{
+    width: 200px;
+}
+
+a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+}
+#display{
+    display: none;
+    background-color: white;
+    height: auto;
+    margin: 10px auto;
+    width: 353px;
+    padding: 10px 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+ul{
+  list-style: none;
+  padding-inline-start:10px;
+}
