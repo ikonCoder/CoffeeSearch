@@ -1,9 +1,9 @@
-body{margin: 0px; font-family: monospace; background-image: url(../images/coffeeBackground.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;}
+body{margin: 0px; font-family: monospace; background-image: url(../images/coffeeBackground.jpg); background-position: center; background-size: inherit; background-repeat: no-repeat;}
 
 
 #searchContainer{
     position: relative;
-    top: 50px;    
+    top: 25vh;    
     /* transform: translateY(-50%); */
 }
 #brandTitle{
@@ -26,11 +26,14 @@ body{margin: 0px; font-family: monospace; background-image: url(../images/coffee
 
 
 #starterBlocksContainer{
+  display: none;
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  bottom: -200px;
+  margin: 0 auto;
+  width: auto;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  margin-bottom: 20px;
   text-align: center;
 }
 #recomendTxt{
@@ -41,8 +44,12 @@ body{margin: 0px; font-family: monospace; background-image: url(../images/coffee
     font-family: monospace;
 }
 .card{
-    display: inline-block;
-    margin: 0px 20px;
+    display: block;
+    float: left;
+    margin: 20px 15px;
+    min-height: 285px ;
+    max-height: 285px;
+
 }
 .card-img-top{
     max-height: 190px;
@@ -66,7 +73,67 @@ a:hover {
     left: 0;
     right: 0;
 }
+#errorTxt{
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  font-size: 15px;
+}
 ul{
   list-style: none;
   padding-inline-start:10px;
+}
+
+.resultContainer{
+  width: 90%;
+  height: 90%;
+  padding: 0px;
+}
+#resultsContainer{
+  margin-top: 15%;
+}
+.itemSelected{
+  font-size: 40px;
+  border-bottom: solid 4px #d6b168;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.itemCount{
+  font-size: 19px;
+  position: absolute;
+  right: 20px;
+  top: 52px;
+}
+#cardContainer{
+  margin-top: 125px;
+  padding: 0px 20px;
+}
+#exploreBttn{
+  position: absolute;
+  bottom: 20px;
+}
+
+.blueHash{color: #9292d6;}
+.orangeHash{color: #d6b168;}
+.redHash{color: red;}
+
+@media(max-width:450px){
+  #cardContainer{
+    margin-top: 200px;
+  }
+  .card{
+    float: none;
+    margin: 20px auto;
+  }
+  .card-title{
+    margin-bottom: 1.75rem !important;
+  }
+  .itemCount{
+    text-align: center;
+    top: 150px;
+    right: 0;
+    left: 0;
+  }
 }
