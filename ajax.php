@@ -34,7 +34,7 @@ if (isset(($_POST)['selected'])) {
    $selectedItem = $_POST['selected'];
    $response = [];
 
-   $Query = "SELECT DISTINCT company FROM coffee_test WHERE country LIKE '%$selectedItem%' LIMIT 10";
+   $Query = "SELECT distinct company,region,altitude,processing_method FROM coffee_test WHERE country LIKE '%$selectedItem%' LIMIT 600";
    $ExecQuery = MySQLi_query($con, $Query);
     
    $result = [];
@@ -43,6 +43,6 @@ if (isset(($_POST)['selected'])) {
    }
 
    echo json_encode($result);
-   exit(); 
+   exit();
 }
 ?>
