@@ -44,26 +44,33 @@ function searchSuccess(){
 
  //build container for selected item
  function buildClickedContainer(data,item){
-    let strContainer = 0;
-    let str = 0;
     let cleanData = $.parseJSON(data);
+    console.log(cleanData);
+    let strContainer = "";
+    let str = `<div class='resultContainer'><span class='itemSelected'>${item}</span><span class='itemCount'>{${cleanData.length} items found}</span><div id="cardContainer">`;
     
     for(i=0; i < cleanData.length; i++){
+        //check for blank name field.
+        if(cleanData[i].company != 0){
+            str += `
+            <div class="card" style="width: 15rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${cleanData[i].company}</h5>
+                    <div class="card-text">
+                        <ul> 
+                            <li class="blueHash"><span>#Region:</span> ${cleanData[i].region} </li>
+                            <li class="redHash">#Altitude: ${cleanData[i].altitude} </li>
+                            <li class="orangeHash">#Processing Method: ${cleanData[i].processing_method} </li>
+                        <ul/>
+                    </div>
+                    <a href="#" id="exploreBttn" class="btn btn-dark">Shop</a>
+                </div>
+            </div>`; 
+        }
         console.log(cleanData[i].company);
-        
     }
-    // let str =  `<div class="message"><h2>${data}</h2><p>[end of results!]</p></div>` ;
-    str = `<div class="resultContainer"><span class="itemSelected">${item}</span>
-    <div id="resultsContainer"> </div>
-        <div data-aos="fade-right" class="card" style="width: 15rem;">
-            <div class="card-body">
-                <h5 class="card-title">${cleanData[0].company}</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-dark">Explore</a>
-            </div>
-        </div>
-    </div>` ;
 
+    str += "</div></div>"
     $.fancybox.open(str);
  }
 
