@@ -33,7 +33,6 @@ function searchSuccess(){
         },
         //Passes data to buildClickedContainer function
         success: function(data) {
-            // test = data;
             test = $.parseJSON(data);
             fill(item);
             buildClickedContainer(data,item);
@@ -44,30 +43,40 @@ function searchSuccess(){
 
  //build container for selected item
  function buildClickedContainer(data,item){
+    let strContainer = "";
+    let x = '';
     let cleanData = $.parseJSON(data);
     console.log(cleanData);
-    let strContainer = "";
+
+    for(i=0; i < cleanData.length; i++){
+        if(cleanData[i].country != 0){
+            x = i;
+        }
+    }
     let str = `<div class='resultContainer'><span class='itemSelected'>${item}</span><span class='itemCount'>{${cleanData.length} items found}</span><div id="cardContainer">`;
     
     for(i=0; i < cleanData.length; i++){
         //check for blank name field.
-        if(cleanData[i].company != 0){
-            str += `
-            <div class="card" style="width: 15rem;">
-                <div class="card-body">
-                    <h5 class="card-title">${cleanData[i].company}</h5>
-                    <div class="card-text">
-                        <ul> 
-                            <li class="blueHash"><span>#Region:</span> ${cleanData[i].region} </li>
-                            <li class="redHash">#Altitude: ${cleanData[i].altitude} </li>
-                            <li class="orangeHash">#Processing Method: ${cleanData[i].processing_method} </li>
-                        <ul/>
+            let nonBlankEntry = 0;
+            if(cleanData[i].company != 0){
+                nonBlankEntry = i;
+                str += `
+                <div class="card" style="width: 15rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">${cleanData[i].company}</h5>
+                        <div class="card-text">
+                            <ul> 
+                                <li class="blueHash"><span>#Region:</span> ${cleanData[i].region} </li>
+                                <li class="redHash">#Altitude: ${cleanData[i].altitude} </li>
+                                <li class="orangeHash">#Processing Method: ${cleanData[i].processing_method} </li>
+                            <ul/>
+                        </div>
+                        <a href="#" id="exploreBttn" class="btn btn-dark">Explore</a>
                     </div>
-                    <a href="#" id="exploreBttn" class="btn btn-dark">Shop</a>
-                </div>
-            </div>`; 
-        }
-        console.log(cleanData[i].company);
+                </div>`; 
+                console.log("total items are: ");
+            }
+        // console.log(cleanData[i].company);
     }
 
     str += "</div></div>"
@@ -77,28 +86,22 @@ function searchSuccess(){
 
 
  $(document).ready(function() {
-    //On pressing a key on "Search box" in "search.php" file. This function will be called.
+    //On pressing a key in "Search box" - This function will be called.
     $("#search").keyup(function() {
         //Assigning search box value to javascript variable named as "name".
         var name = $('#search').val();
         //Validating, if "name" is empty.
         if (name == "") {
-            //Assigning empty value to "display" div in "search.php" file.
+            //Assigning empty value to "display/results" div in "search.php" file.
             $("#display").html("");
         }
-        //If name is not empty.
         else {
-            //AJAX is called.
             $.ajax({
-                //AJAX type is "Post".
                 type: "POST",
-                //Data will be sent to "ajax.php".
                 url: "ajax.php",
-                //Data, that will be sent to "ajax.php".
                 data: {
                     search: name
                 },
-                //If result found, this funtion will be called.
                 success: function(data) {
                     //Assigning data returned to "display" div in "index.php" file.
                     if(data == 0){
