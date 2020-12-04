@@ -4,10 +4,10 @@ let blur = 0;
 let blurCheck = 0;
 
 
-//Getting value from "ajax.php".
+//Getting value from "db_search.php".
 function fill(Value) {
     $('#search').val(Value);
-    //Hiding "display" div in "search.php" file.
+    //Hiding "display" div in "db_search.php" file.
     $('#display').hide();   
  }
  
@@ -27,7 +27,7 @@ function searchSuccess(){
     $.ajax({
         type: "POST",
         // dataType: "json",
-        url: "ajax.php",
+        url: "db_search.php",
         data: {
             selected: item
         },
@@ -48,12 +48,7 @@ function searchSuccess(){
     let cleanData = $.parseJSON(data);
     console.log(cleanData);
 
-    for(i=0; i < cleanData.length; i++){
-        if(cleanData[i].country != 0){
-            x = i;
-        }
-    }
-    let str = `<div class='resultContainer'><span class='itemSelected'>${item}</span><span class='itemCount'>{${cleanData.length} items found}</span><div id="cardContainer">`;
+    let str = `<div class='resultContainer'><span class='itemSelected'>${item}</span><div id="cardContainer">`;
     
     for(i=0; i < cleanData.length; i++){
         //check for blank name field.
@@ -71,7 +66,7 @@ function searchSuccess(){
                                 <li class="orangeHash">#Processing Method: ${cleanData[i].processing_method} </li>
                             <ul/>
                         </div>
-                        <a href="#" id="exploreBttn" class="btn btn-dark">Explore</a>
+                        <a onclick="explore('${cleanData[i].company}');" id="exploreBttn" class="btn btn-dark">Explore</a>
                     </div>
                 </div>`; 
                 console.log("total items are: ");
@@ -83,6 +78,18 @@ function searchSuccess(){
     $.fancybox.open(str);
  }
 
+ function explore(data){
+    $.ajax({
+        type: "POST",
+        url: "db_search.php",
+        data: {
+            explore: data
+        },
+        success: function(companyName) {
+            buildExplore(companyName);
+        }
+    });
+ }
 
 
  $(document).ready(function() {
@@ -92,13 +99,13 @@ function searchSuccess(){
         var name = $('#search').val();
         //Validating, if "name" is empty.
         if (name == "") {
-            //Assigning empty value to "display/results" div in "search.php" file.
+            //Assigning empty value to "display/results" div in "db_search.php" file.
             $("#display").html("");
         }
         else {
             $.ajax({
                 type: "POST",
-                url: "ajax.php",
+                url: "db_search.php",
                 data: {
                     search: name
                 },
@@ -125,7 +132,6 @@ function searchSuccess(){
             $("#display").hide();   
         }
     });
-
 
  });
 
