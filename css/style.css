@@ -33,7 +33,7 @@ padding-bottom: 20px;
 }
 #siteDesc{
 color: white;
-width: 700px;
+max-width: 700px;
 text-align: center;
 margin: 0 auto;
 font-size: 16px;
@@ -145,6 +145,14 @@ margin-top: 10%;
 position: absolute;
 bottom: 20px;
 }
+#buttonContainer{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  bottom: 120px;
+  width: 95%;
+}
 
 .blueHash{color: #9292d6;}
 .orangeHash{color: #d6b168;}
@@ -171,7 +179,11 @@ background-color: transparent;
 .fancybox-slide--html .fancybox-close-small{
 color: white;
 }
-
+.btn-secondary, .btn-success{
+  display: inline-block;
+  margin: 0px 10px;
+  width: 140px;
+}
 
 .exploreContainer{
   width: 100%;
@@ -223,11 +235,13 @@ color: white;
 /* queries */
 @media(max-width:450px){
 #cardContainer{
-margin-top: 200px;
+margin-top: 125px;
 }
 .card{
 float: none;
 margin: 20px auto;
+width: 20rem !important;
+min-height: 400px !important;
 }
 .card-title{
 margin-bottom: 1.75rem !important;
@@ -238,4 +252,33 @@ top: 150px;
 right: 0;
 left: 0;
 }
+#searchSectionContainer{
+  padding: 35px;
+}
+#search{
+  width: 100%;
+}
+.resultContainer{width: 100%;}
+.itemSelected{position: absolute;}
+#cardContainer{margin-left: 0px;}
+#exploreBttn{margin: 0 auto; left: 0; right: 0;}
+.blueHash,.redHash,.orangeHash{font-size: 16px;}
+.card-title{font-size: 35px;}
+.exploreContainer{padding: 10px;}
+#explore_companyName{font-size: 30px;}
+.coffeeDataContainer{width: 80%;}
+.coffeeContainer{width: 20%;}
+.exploreItem{max-width: 90%; padding: 10px 0px; font-size: 16px;}
+#exploreInfo{top: 275px;}
+#coffeeBackground1{background-position: right;}
+.btn-success{    
+  margin: 0 auto;
+  display: block;
+  width: 200px;
+}
+#buttonContainer{
+  width: 78%;
+}
+.btn-secondary, .btn-success{margin-top: 10px;     width: 200px;}
+
 }
