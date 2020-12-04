@@ -17,9 +17,21 @@ function buildExplore(data){
                         <span class="exploreItem">Altitude: ${cleanData[0].altitude}</span>
                         <span class="exploreItem">Processing Method: ${cleanData[0].processing_method}</span>
                     </div>
+                    <span id="buttonContainer">
+                        <button onclick="comingSoon()" type="button" class="btn btn-success">Buy</button>
+                        <button onclick="comingSoon()" type="button" class="btn btn-secondary">Favorite</button>
+                    </span>
             </div>
         </div>
     </div>`;
 
     $.fancybox.open(str)
+}
+
+function comingSoon(){
+    alert("Feature coming soon.");
+}
+
+function googleBuy(){
+    alert("google buy script");
 }
