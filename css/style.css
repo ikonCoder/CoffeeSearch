@@ -1,139 +1,241 @@
-body{margin: 0px; font-family: monospace; background-image: url(../images/coffeeBackground.jpg); background-position: center; background-size: inherit; background-repeat: no-repeat;}
+body{margin: 0px; font-family: monospace;}
 
+#myVideo {
+position: fixed;
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+} 
+
+#searchSectionContainer{
+position: relative;
+top: 0;
+background-color: #00000094;
+width: 100vw;
+height: 100vh;
+padding: 100px;
+margin: 0 auto;
+}
 
 #searchContainer{
-    position: relative;
-    top: 25vh;    
-    /* transform: translateY(-50%); */
+position: relative;
+top: 10vh;    
+margin: 0 auto;
 }
 #brandTitle{
-    color: white;
-    text-align: center;
-    font-size: 55px;
-    margin: 0px;
-    letter-spacing: 1.5px;
-    padding-bottom: 20px;
+color: white;
+text-align: center;
+font-size: 55px;
+margin: 0px;
+letter-spacing: 1.5px;
+padding-bottom: 20px;
+}
+#siteDesc{
+color: white;
+width: 700px;
+text-align: center;
+margin: 0 auto;
+font-size: 16px;
 }
 #search{
-    display: block;
-    margin: 0 auto;
-    height: 42px;
-    width: 355px;
-    box-shadow: 0px 7px 3px 2px #0000008f;
-    border: none;
-    margin-top: 25px;
+display: block;
+margin: 0 auto;
+height: 42px;
+width: 355px;
+box-shadow: 0px 7px 3px 2px #0000008f;
+border: none;
+margin-top: 25px;
 }
 
 
 #starterBlocksContainer{
-  display: none;
-  position: absolute;
-  margin: 0 auto;
-  width: auto;
-  left: 0;
-  right: 0;
-  bottom: -100px;
-  margin-bottom: 20px;
-  text-align: center;
+display: none;
+position: absolute;
+margin: 0 auto;
+width: auto;
+left: 0;
+right: 0;
+bottom: -100px;
+margin-bottom: 20px;
+text-align: center;
 }
 #recomendTxt{
-    color: #ffffff;
-    text-align: center;
-    font-size: 35px;
-    margin-bottom: 35px;
-    font-family: monospace;
+color: #ffffff;
+text-align: center;
+font-size: 35px;
+margin-bottom: 35px;
+font-family: monospace;
 }
 .card{
-    display: block;
-    float: left;
-    margin: 20px 15px;
-    min-height: 285px ;
-    max-height: 285px;
+display: block;
+float: left;
+margin: 20px 15px;
+min-height: 285px ;
+max-height: 285px;
 
 }
 .card-img-top{
-    max-height: 190px;
+max-height: 190px;
 }
 .btn-dark{
-    width: 200px;
+width: 200px;
 }
 
 a:hover {
-  cursor: pointer;
-  border-bottom: 1px solid black;
+cursor: pointer;
+border-bottom: 1px solid black;
 }
 #display{
-    display: none;
-    background-color: white;
-    height: auto;
-    margin: 10px auto;
-    width: 353px;
-    padding: 10px 0px;
-    position: absolute;
-    left: 0;
-    right: 0;
+display: none;
+background-color: white;
+height: auto;
+max-height: 300px;
+margin: 10px auto;
+width: 353px;
+padding: 10px 0px;
+position: absolute;
+left: 0;
+right: 0;
+overflow: auto;
 }
 #errorTxt{
-  display: none;
-  text-align: center;
-  margin-top: 10px;
-  color: white;
-  font-size: 15px;
+display: none;
+text-align: center;
+margin-top: 10px;
+color: white;
+font-size: 15px;
 }
 ul{
-  list-style: none;
-  padding-inline-start:10px;
+list-style: none;
+padding-inline-start:10px;
 }
 
 .resultContainer{
-  width: 90%;
-  height: 90%;
-  padding: 0px;
+width: 90%;
+height: 90%;
+padding: 0px;
 }
 #resultsContainer{
-  margin-top: 15%;
+margin-top: 15%;
 }
 .itemSelected{
-  font-size: 40px;
-  border-bottom: solid 4px #d6b168;
-  position: absolute;
-  left: 20px;
-  top: 20px;
+font-size: 40px;
+border-bottom: solid 4px #d6b168;
+color: white;
+position: fixed;
+left: 20px;
 }
 .itemCount{
-  font-size: 19px;
-  position: absolute;
-  right: 20px;
-  top: 52px;
+font-size: 19px;
+position: absolute;
+right: 20px;
+top: 52px;
+color: white;
 }
 #cardContainer{
-  margin-top: 125px;
-  padding: 0px 20px;
+margin-top: 125px;
+padding: 0px 20px;
+height: 90%;
+/* margin: 0 auto; */
+margin-left: 50px;
+margin-top: 10%;
 }
 #exploreBttn{
-  position: absolute;
-  bottom: 20px;
+position: absolute;
+bottom: 20px;
 }
 
 .blueHash{color: #9292d6;}
 .orangeHash{color: #d6b168;}
 .redHash{color: red;}
 
+.card-title{
+color: white;
+}
+.card{
+background-color: currentColor;
+display: block;
+float: none;
+margin: 20px auto;
+min-height: 285px;
+max-height: 285px;
+float: left;
+margin-right: 10px;
+
+}
+.fancybox-content{
+background-color: transparent;
+}
+
+.fancybox-slide--html .fancybox-close-small{
+color: white;
+}
+
+
+.exploreContainer{
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+.coffeeContainer{
+  width: 35%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: blur(8px);
+  display: inline-block;
+}
+#coffeeBackground0{background-image: url(../images/exploreCoffeeBkg0.jpg);}
+#coffeeBackground1{background-image: url(../images/coffeeBackground1.jpg);}
+#coffeeBackground2{background-image: url(../images/exploreCoffeeBkg2.jpg);}
+.coffeeDataContainer{
+  width: 65%;
+  height: 100%;
+  float: right;
+  background-color: rgb(33, 37, 41);
+}
+#explore_companyName{
+  font-size: 40px;
+  border-bottom: solid 4px #d6b168;
+  color: white;
+  position: absolute;
+  margin: 40px;
+}
+#exploreInfo{
+  position: absolute;
+  top: 250px;
+  margin-left: 50px;
+}
+.exploreItem{
+  font-size: 28px;
+  color: #ffffff;
+  display: block;
+}
+
+
+
+
+
+
+
+
+/* queries */
 @media(max-width:450px){
-  #cardContainer{
-    margin-top: 200px;
-  }
-  .card{
-    float: none;
-    margin: 20px auto;
-  }
-  .card-title{
-    margin-bottom: 1.75rem !important;
-  }
-  .itemCount{
-    text-align: center;
-    top: 150px;
-    right: 0;
-    left: 0;
-  }
+#cardContainer{
+margin-top: 200px;
+}
+.card{
+float: none;
+margin: 20px auto;
+}
+.card-title{
+margin-bottom: 1.75rem !important;
+}
+.itemCount{
+text-align: center;
+top: 150px;
+right: 0;
+left: 0;
+}
 }
