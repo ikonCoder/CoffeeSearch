@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 //configs
 include "includes/db_config.php";
 // $selected = isset(($_POST)['selected']);
