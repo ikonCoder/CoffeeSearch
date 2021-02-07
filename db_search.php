@@ -9,10 +9,8 @@ include "includes/db_config.php";
 //Getting value of "search" variable from "search.js".
 if (isset(($_POST)['search'])) {
    $querySearch = $_POST['search'];
-//Search query.
-   $Query = "SELECT DISTINCT company,country FROM coffee_test WHERE company or country LIKE '%$querySearch%' LIMIT 10";
-//Query execution
-   $ExecQuery = MySQLi_query($con, $Query);
+   $Query = "SELECT company, country FROM coffee_test WHERE company or country LIKE '%$querySearch%' GROUP BY country LIMIT 10";
+      $ExecQuery = MySQLi_query($con, $Query);
 
 //Fetching data from database.
 while ($data = MySQLi_fetch_array($ExecQuery)) {
