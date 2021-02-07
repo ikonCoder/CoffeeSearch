@@ -19,7 +19,6 @@ function buildExplore(data){
                     </div>
                     <span id="buttonContainer">
                         <button onclick="comingSoon()" type="button" class="btn btn-success">Buy</button>
-                        <button onclick="comingSoon()" type="button" class="btn btn-secondary">Favorite</button>
                     </span>
             </div>
         </div>
