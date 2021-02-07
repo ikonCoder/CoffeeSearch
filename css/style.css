@@ -133,13 +133,19 @@ right: 20px;
 top: 52px;
 color: white;
 }
+.fancybox-bg{
+  background: #000000fa !important;
+}
 #cardContainer{
 margin-top: 125px;
 padding: 0px 20px;
 height: 90%;
-/* margin: 0 auto; */
 margin-left: 50px;
 margin-top: 10%;
+overflow: auto;
+}
+#cardContainer::-webkit-scrollbar {
+  display: none;
 }
 #exploreBttn{
 position: absolute;
