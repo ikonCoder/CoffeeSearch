@@ -1,0 +1,231 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body{
+    font-family: roboto !important;
+    background-image: url(images/landing_bkg.jpeg);
+    background-size: cover;
+    opacity: 0.9;
+    overflow-y: hidden;
+}
+.err_txt{color: rgb(204, 42, 42); text-align: center;}
+.filter{filter: blur(3px);}
+.loading_gif{
+    background: url(images/loading_gif.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    width: 150px;
+    height: 200px;
+    margin: 0 auto;
+    display: none;
+}
+
+
+#body_inner_wrapper{
+    max-width: 1150px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 1px black;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "a b";
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    height: 500px;
+    left: 0;
+    right: 0;
+}
+
+#welcome_left{
+    background-image: url(images/landing_new.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-area: a;
+}
+#login_section{
+    grid-area: b;
+    background-color: rgb(240, 240, 240);
+}
+
+#login_container, #profileOptions{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#profileInner{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#profileOptions{
+    display: none;
+    text-align: center;
+    height: 100%;
+}
+
+#cont_btn{
+    padding-left: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#login_inner_title{
+    font-family: 'Lobster', cursive;   
+    color: #566c65;
+    font-size: 65px;
+    text-align: center;
+    display: block;
+}
+
+#login_inner_title div{
+    font-size: 12px;
+    max-width: 400px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-family: sans-serif;
+    padding: 10px 0;
+}
+
+#login_pwd, #signup_pwd{
+    margin-bottom: 30px !important;
+}
+
+#login_username, #login_pwd, #signup_email, #signup_pwd, #profileUsername{
+    background-color: transparent;
+    display: block;
+    margin: 15px auto;
+    height: 40px;
+    width: 230px;
+    border: none;
+    padding: 0 10px;
+    border-bottom: 1px solid rgb(58, 58, 58);
+}
+
+#login_username, #login_pwd, #signup_email, #profileUsername, #signup_pwd:focus-visible{
+    border-bottom: 1px solid rgb(58, 58, 58);
+    outline-width: 0;
+}
+
+#login_username::placeholder, #profileUsername::placeholder, #login_pwd::placeholder{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#profileUsername{
+    margin: 30px auto;
+    text-align: center;
+}
+
+#sign-in_btn, #sign-up_btn{
+    width: 150px;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #daa97bcf;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18.5px;
+}
+
+#sign-up_txt, #sign-in_txt{
+    width: 150px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+#login_footer{
+    color: #5C5C5C;
+    font-size: 13.5px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+    right: 0;
+    margin: 0 auto;
+}
+
+
+/* avater css */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 0 auto;
+}
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+.avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all .2s ease-in-out;
+}
+.avatar-upload .avatar-edit input + label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+.avatar-upload .avatar-edit input + label:after {
+    content: "\f067";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+.avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+}
+.avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
