@@ -2,7 +2,6 @@ let signUpCreds, emailValid, pwdValid = 0;
 
 function firstLogin(signUpCreds, email, pwd, todaysDate, uid){
     if(signUpCreds){
-        $("#login_err_txt").css("display", "none");
         $.ajax({
             type: "POST",
             url: "includes/db_login.php",
@@ -109,6 +108,7 @@ function signupValidate(){
         let randomNum = Math.floor(Math.random() * 100000000); //creates a random num that is 8 digits long.
         let user_id = "UID-" + randomNum;
 
+        $("#login_err_txt").css("display", "none");
         firstLogin(signUpCreds, email, pwd, todaysDate, user_id);
     }else {
         console.log("signup failed..");
