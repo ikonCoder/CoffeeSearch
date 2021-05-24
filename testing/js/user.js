@@ -1,5 +1,18 @@
 let signUpCreds, emailValid, pwdValid = 0;
 
+function signup(){
+    //hide all login fields
+    $("#login_fields").css("display", "none");
+    $("#signup_fields").css("display", "block");
+}
+
+function signIn(){
+    //hide all login fields
+    $("#login_fields").css("display", "block");
+    $("#signup_fields").css("display", "none");
+}
+
+//login funtionality
 function firstLogin(signUpCreds, email, pwd, todaysDate, uid){
     if(signUpCreds){
         $.ajax({
@@ -43,30 +56,33 @@ function firstLogin(signUpCreds, email, pwd, todaysDate, uid){
     }
 }
 
+
+//account creation options
 function profileStart(uid){
     console.log("UID IS: " + uid)
     $("#profileOptions").css("display", "block");
     $("#login_container").css("display", "none");    
 }
 
-// function readURL(input) {
-//     if (input.files && input.files[0]) {
-//         var reader = new FileReader();
-//         reader.onload = function(e) {
-//             $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-//             $('#imagePreview').hide();
-//             $('#imagePreview').fadeIn(650);
-//         }
-//         reader.readAsDataURL(input.files[0]);
-//     }
+function readURL(input) {
+    console.log(input)
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+            $('#imagePreview').hide();
+            $('#imagePreview').fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
-//     alert("here");
-// }
+$("#imageUpload").change(function() {
+    readURL(this);
+});
 
-// $("#imageUpload").change(function() {
-//     readURL(this);
-// });
 
+//sign up validation
 function signupValidate(){
     let email = $("#signup_email").val();
     let pwd = $("#signup_pwd").val();
@@ -116,18 +132,9 @@ function signupValidate(){
     }
 }
 
-function signup(){
-    //hide all login fields
-    $("#login_fields").css("display", "none");
-    $("#signup_fields").css("display", "block");
-}
 
-function signIn(){
-    //hide all login fields
-    $("#login_fields").css("display", "block");
-    $("#signup_fields").css("display", "none");
-}
 
+//error cases
 function errorTxt(err){
     switch(err){
         case "invalidEmail":
